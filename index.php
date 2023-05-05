@@ -28,7 +28,7 @@ function generatePassword($lengthPassword) {
     <form action="<?php echo $_SERVER['PHP_SELF']?>" method="GET">
 		<label for="lengthPassword">Lunghezza Password:</label>
 		<input type="number" id="lengthPassword" name="lengthPassword" min="8" max="32" required>
-		<input type="submit" value="Genera Password">
+		<button type="submit">Generate password</button>
 	</form>
 
     <?php if(isset($_GET["lengthPassword"])){ ?>
