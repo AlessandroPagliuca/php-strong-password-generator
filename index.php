@@ -12,15 +12,7 @@ if(isset($_GET["lengthPassword"])) {
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHP Strong Password Generator</title>
-</head>
-<body>
+    <?php include './partials/template/header.php' ?>
 
     <form action="<?php echo $_SERVER['PHP_SELF']?>" method="GET">
 		<label for="lengthPassword">Length Password:</label>
@@ -33,5 +25,4 @@ if(isset($_GET["lengthPassword"])) {
         <p> <?php echo $password ?> </p>
     <?php }?>
     
-</body>
-</html>
+<?php include './partials/template/footer.php' ?>
