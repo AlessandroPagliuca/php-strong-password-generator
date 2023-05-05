@@ -30,18 +30,16 @@ unset($_SESSION["password"]);
 <script>
     const copyBtn = document.getElementById('copy-btn');
     const passwordEl = document.querySelector('.card-element p');
-
+    //Event button for copy password
     copyBtn.addEventListener('click', () => {
-        navigator.clipboard.writeText(passwordEl.textContent)
-            .then(() => {
-                copyBtn.textContent = 'Copied!';
-                setTimeout(() => {
-                    copyBtn.textContent = 'Copy password';
-                }, 3000);
-            })
-            .catch(error => {
-                console.error('Unable to copy password', error);
-            });
+        navigator.clipboard.writeText(passwordEl.textContent).then(() => {
+            copyBtn.textContent = 'Copied!';
+            setTimeout(() => {
+                copyBtn.textContent = 'Copy password';
+            }, 2500);
+        }).catch(error => {
+            console.error('Unable to copy password', error);
+        });
     });
 
 </script>
