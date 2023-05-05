@@ -1,18 +1,18 @@
 <?php 
 
+		
+function generatePassword($lengthPassword = $_GET["lengthPassword"]) {
+    
 if(isset($_GET["lengthPassword"])) {
-	$lengthPassword = $_GET["lengthPassword"];
-	$password = generatePassword($lengthPassword);
-		
+	$lengthPassword = $_GET["lengthPassword"];		
 }
-		
-function generatePassword($lengthPassword) {
+
 	$character = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_-=+;:,.?";
 	$password = substr(str_shuffle($character), 0, $lengthPassword);
 	return $password;
 }
 
-
+$password = generatePassword();
 ?>
 
 <!DOCTYPE html>
