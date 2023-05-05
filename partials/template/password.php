@@ -20,14 +20,31 @@ unset($_SESSION["password"]);
         <div class="container-fluid d-flex justify-content-center align-items-start h-100">
             <div class="card card-element d-flex align-items-center justify-content-center">
                 <p class="text-white text-center fw-semibold fs-3 overflow-wrap"><?php echo $password; ?></p>
+                <button id="copy-btn" class="btn btn-outline-light">Copy password</button>
             </div>
         </div>
     </main>
     
-
-    
-
 <?php include './footer.php' ?>
+
+<script>
+    const copyBtn = document.getElementById('copy-btn');
+    const passwordEl = document.querySelector('.card-element p');
+
+    copyBtn.addEventListener('click', () => {
+        navigator.clipboard.writeText(passwordEl.textContent)
+            .then(() => {
+                copyBtn.textContent = 'Copied!';
+                setTimeout(() => {
+                    copyBtn.textContent = 'Copy password';
+                }, 3000);
+            })
+            .catch(error => {
+                console.error('Unable to copy password', error);
+            });
+    });
+
+</script>
 
 <style>
 
