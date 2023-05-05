@@ -1,7 +1,15 @@
 <?php 
+session_start();
 
 include __DIR__ . '/partials/functions/function.php';
-$password = generatePassword($lengthPassword = 8);
+
+if(isset($_GET["lengthPassword"])) {
+	$lengthPassword = $_GET["lengthPassword"];
+	$password = generatePassword($lengthPassword);
+    $_SESSION['password'] = $password;
+    header('Location:  ./partials/template/password.php');
+    die;
+}
 ?>
 
 <!DOCTYPE html>
