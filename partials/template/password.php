@@ -19,7 +19,7 @@ unset($_SESSION["password"]);
     <main>
         <div class="container-fluid d-flex justify-content-center align-items-start h-100">
             <div class="card card-element d-flex align-items-center justify-content-center">
-                <p class="text-white fw-semibold fs-3"><?php echo $password; ?></p>
+                <p class="text-white text-center fw-semibold fs-3 overflow-wrap"><?php echo $password; ?></p>
             </div>
         </div>
     </main>
@@ -44,16 +44,16 @@ main{
 }
 
 .card-element{
-    width: 350px;
-    height: 275px;
+    width: fit-content;
+    height: 285px;
     background-color: rgb(11, 11, 48);
-    transition: width 0.6s ease-in-out, height 0.6s ease-in-out;
+    transition: box-shadow 0.4s ease-in-out;
     border: 1px solid rgba(255, 255, 255, 0.726);
+    padding: 1rem;
+
 }
 
 .card-element:hover {
-    width: 360px;
-    height: 285px;
     box-shadow: 1rem 1rem 1rem rgb(11, 11, 48);
 
 }
@@ -62,4 +62,7 @@ main{
     color: rgb(23, 23, 100);
 }
 
+.overflow-wrap{
+    overflow-wrap: break-word;
+}
 </style>
