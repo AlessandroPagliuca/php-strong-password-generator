@@ -12,14 +12,18 @@ unset($_SESSION["password"]);
 
 <?php include './header.php' ?>
 
-    <div class="container-fluid d-flex flex-column justify-content-center align-items-center c92-height">
-        
-        <h2 class="text-white pb-5">Your random password:</h2>
+    <header class="d-flex align-items-end justify-content-center">
+        <h2 class="text-white pb-5 py-5">Your random password:</h2>    
+    </header>
 
-        <div class="card card-element d-flex align-items-center justify-content-center">
-            <p class="text-white fw-semibold fs-3"><?php echo $password; ?></p>
+    <main>
+        <div class="container-fluid d-flex justify-content-center align-items-start h-100">
+            <div class="card card-element d-flex align-items-center justify-content-center">
+                <p class="text-white fw-semibold fs-3"><?php echo $password; ?></p>
+            </div>
         </div>
-    </div>
+    </main>
+    
 
     
 
@@ -30,22 +34,26 @@ unset($_SESSION["password"]);
 body {
     background-color: rgb(23, 23, 100);
   }
-
-.c92-height{
-    height: 100vh;
+header{
+    width: 100vw;
+    height: 40vh;
+}
+main{
+    width: 100vw;
+    height: 60vh;
 }
 
 .card-element{
-    width: 40%;
-    height: 25%;
+    width: 350px;
+    height: 275px;
     background-color: rgb(11, 11, 48);
     transition: width 0.6s ease-in-out, height 0.6s ease-in-out;
     border: 1px solid rgba(255, 255, 255, 0.726);
 }
 
 .card-element:hover {
-    width: 41%;
-    height: 26%;
+    width: 360px;
+    height: 285px;
     box-shadow: 1rem 1rem 1rem rgb(11, 11, 48);
 
 }
