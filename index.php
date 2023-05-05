@@ -13,6 +13,7 @@ if(isset($_GET["lengthPassword"])) {
 ?>
 
     <?php include './partials/template/header.php' ?>
+
     <div class="container-fluid d-flex flex-column justify-content-center align-items-center c92-height">
         <h1 class="text-white pb-5">Generate your secure password</h1>
         <form class="card card-element d-flex flex-column align-items-stratch justify-content-evenly" action="<?php echo $_SERVER['PHP_SELF']?>" method="GET">
@@ -22,10 +23,6 @@ if(isset($_GET["lengthPassword"])) {
             </div>    
             <button type="submit" class="btn btn-outline-light w-50 align-self-center fw-semibold">Generate password</button>
         </form>
-
-       
     </div>
-   
-
-    
+       
 <?php include './partials/template/footer.php' ?>
