@@ -1,18 +1,7 @@
 <?php 
 
-		
-function generatePassword($lengthPassword = $_GET["lengthPassword"]) {
-    
-if(isset($_GET["lengthPassword"])) {
-	$lengthPassword = $_GET["lengthPassword"];		
-}
-
-	$character = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_-=+;:,.?";
-	$password = substr(str_shuffle($character), 0, $lengthPassword);
-	return $password;
-}
-
-$password = generatePassword();
+include __DIR__ . '/partials/functions/function.php';
+$password = generatePassword($lengthPassword = 8);
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +15,7 @@ $password = generatePassword();
 <body>
 
     <form action="<?php echo $_SERVER['PHP_SELF']?>" method="GET">
-		<label for="lengthPassword">Lunghezza Password:</label>
+		<label for="lengthPassword">Length Password:</label>
 		<input type="number" id="lengthPassword" name="lengthPassword" min="8" max="32" required>
 		<button type="submit">Generate password</button>
 	</form>
