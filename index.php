@@ -13,16 +13,19 @@ if(isset($_GET["lengthPassword"])) {
 ?>
 
     <?php include './partials/template/header.php' ?>
+    <div class="container-fluid d-flex flex-column justify-content-center align-items-center c92-height">
+        <h1 class="text-white pb-5">Generate your secure password</h1>
+        <form class="card card-element d-flex flex-column align-items-stratch justify-content-evenly" action="<?php echo $_SERVER['PHP_SELF']?>" method="GET">
+            <div class="d-flex justify-content-evenly">
+                <label for="lengthPassword" class="fw-semibold text-uppercase text-center text-white w-50">Length Password:</label>
+                <input class="w-25 text-center fw-semibold text-color" type="number" id="lengthPassword" name="lengthPassword" min="8" max="32" required>
+            </div>    
+            <button type="submit" class="btn btn-outline-light w-50 align-self-center fw-semibold">Generate password</button>
+        </form>
 
-    <form action="<?php echo $_SERVER['PHP_SELF']?>" method="GET">
-		<label for="lengthPassword">Length Password:</label>
-		<input type="number" id="lengthPassword" name="lengthPassword" min="8" max="32" required>
-		<button type="submit">Generate password</button>
-	</form>
+       
+    </div>
+   
 
-    <?php if(isset($_GET["lengthPassword"])){ ?>
-        <h2>Your random password:</h2>
-        <p> <?php echo $password ?> </p>
-    <?php }?>
     
 <?php include './partials/template/footer.php' ?>
