@@ -49,7 +49,7 @@ main{
     width: 350px;
     height: 275px;
     background-color: rgb(11, 11, 48);
-    transition: width 0.6s ease-in-out, height 0.6s ease-in-out;
+    transition: width 0.6s ease-in-out, height 0.6s ease-in-out, box-shadow 0.4s ease-in-out;
     border: 1px solid rgba(255, 255, 255, 0.726);
 }
 
